@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: smyaspnetcoreimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smyaspnetcoreimage
+  template:
+    metadata:
+      labels:
+        app: smyaspnetcoreimage 
+    spec:
+      containers:
+        - name: smyaspnetcoreimage 
+          image: myacrssh001.azurecr.io/smyaspnetcoreimage
+          ports:
+          - containerPort: 5003
